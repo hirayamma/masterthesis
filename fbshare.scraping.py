@@ -6,10 +6,12 @@ from tqdm import tqdm
 import json
 
 dat=pd.read_csv('videoid.use.csv',encoding="UTF-8")
+variables = open('variables.json')
+variables = json.load(variables)
 
 url_fb = "http://graph.facebook.com/?id="
 url_nico = "http://www.nicovideo.jp/watch/"
-access_token = "518673188484136|hfYe6mCu_Mquo9CrdeFz3XIHpWo"
+access_token = variables['access_token']
 
 #クローリング・スクレイピングの関数
 def func(video_id):
